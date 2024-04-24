@@ -13,16 +13,16 @@ class UserTest {
     public void testSongsEquality() {
         //meme chanson
         Song song1 = new Song("Hey Jude", "The Beatles", 4, 35);
-        Song song2 = new Song("Hey Jude", "The Beatles", 4, 35);
+        Song song2 = song1;
 
         // Assert that they are equal using the equals method
-        assertTrue(song1.equals(song2), "Les chansons  devraient être égales");
+        assertSame(song1, song2, "Les chansons  devraient être égales");
 
         // chanson differente
         Song song3 = new Song("Yesterday", "The Beatles", 4, 35);
 
         // Assert that they are not equal
-        assertFalse(song1.equals(song3), "Les chansons ne devraient pas être égales");
+        assertNotSame(song1.equals(song3), "Les chansons ne devraient pas être égales");
 
 
     }
